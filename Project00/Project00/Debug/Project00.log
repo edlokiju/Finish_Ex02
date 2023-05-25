@@ -1,0 +1,2 @@
+﻿Debugger_detect.obj : error LNK2019: unresolved external symbol ___int2d referenced in function "private: bool __thiscall Debugger_detect::Check_Interrupt_0x2d(void)" (?Check_Interrupt_0x2d@Debugger_detect@@AAE_NXZ)
+C:\Users\namph\source\repos\Project00\Debug\Project00.exe : fatal error LNK1120: 1 unresolved externals
