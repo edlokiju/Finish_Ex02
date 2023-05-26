@@ -23,7 +23,6 @@ bool VM_detect::check_mac_addr(const TCHAR* szMac)
     pAdapterInfo = reinterpret_cast<PIP_ADAPTER_INFO>(malloc(ulOutBufLen));
     if (pAdapterInfo == nullptr)
     {
-        //_tprintf(_T("Error allocating memory needed to call GetAdaptersInfo.\n"));
         return false;
     }
 
@@ -35,7 +34,7 @@ bool VM_detect::check_mac_addr(const TCHAR* szMac)
         pAdapterInfo = reinterpret_cast<PIP_ADAPTER_INFO>(malloc(ulOutBufLen));
         if (pAdapterInfo == nullptr)
         {
-            //printf("Error allocating memory needed to call GetAdaptersInfo\n");
+ 
             return false;
         }
 
@@ -122,7 +121,6 @@ bool VM_detect::Check_VMware_files()
     // Lấy đường dẫn đến thư mục System32
     if (GetSystemDirectory(szDir, MAX_PATH) == 0)
     {
-        //std::cerr << "Failed to get System32 directory" << std::endl;
         return false;
     }
 
@@ -201,8 +199,6 @@ bool VM_detect::Check_VMware_Mac()
 
     for (int i = 0; i < dwLength; i++)
     {
-        //TCHAR msg[256] = _T("");
-        //_stprintf_s(msg, sizeof(msg) / sizeof(TCHAR), _T("Checking MAC starting with %s"), szMac[i][1]);
         if (check_mac_addr(szMac[i][0]))
             return true;
     }
